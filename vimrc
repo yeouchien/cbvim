@@ -33,6 +33,7 @@ set history=700
 " Turn on the WiLd menu
 set wildmenu
 set wildmode=list:longest,full
+set wildignore+=*/tmp/*
 
 " Always show current position
 set ruler
