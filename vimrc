@@ -174,6 +174,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdtree'
 map <Leader>n :NERDTreeToggle<CR>
+au VimEnter *  NERDTree
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 2. ack.vim
