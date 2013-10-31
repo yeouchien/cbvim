@@ -153,6 +153,7 @@ inoremap $t <><esc>i)
 
 " Map jk to esc
 imap jk <esc>
+imap Jk <esc>
 
 " To save, ctrl-s.
 nmap <C-S> :w<CR>
