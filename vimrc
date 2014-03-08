@@ -78,7 +78,8 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable
 set background=dark
-colorscheme solarized
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-tomorrow
 
 set cursorline
 set cursorcolumn
@@ -194,9 +195,9 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 5. vim-colorschemes
+" 5. base16-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'flazz/vim-colorschemes'
+Bundle 'chriskempson/base16-vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 6. nerdcommenter
