@@ -261,4 +261,4 @@ function! VisualSelection(direction, extra_filter) range
   let @" = l:saved_reg
 endfunction
 
-set rtp+=~/Utils/powerline/powerline/bindings/vim
+set rtp+=/usr/local/Cellar/python/2.7.5/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
