@@ -156,9 +156,8 @@ inoremap $t <><esc>i)
 imap jk <esc>
 imap Jk <esc>
 
-" To save, ctrl-s.
-nmap <C-S> :w<CR>
-
+" To save, space w
+nnoremap <Leader>w :w<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
