@@ -182,10 +182,11 @@ map <leader>r :NERDTreeFind<cr>
 au VimEnter *  NERDTree
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 2. ack.vim
+" 2. ag.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'mileszs/ack.vim'
-"map <Leader>f :Ack<space>
+Bundle "rking/ag.vim"
+map <Leader>f :Ag<space>
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 3. vim-rails
@@ -221,7 +222,6 @@ Bundle 'scrooloose/syntastic'
 "let g:html_indent_style1 = "inc"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " 9. vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "tpope/vim-fugitive"
@@ -240,20 +240,13 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 12. ag.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "rking/ag.vim"
-map <Leader>f :Ag<space>
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 13. javascript-libraries-syntax.vim
+" 12. javascript-libraries-syntax.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "othree/javascript-libraries-syntax.vim"
 let g:used_javascript_libs = 'react,flux,requirejs'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 14. ervandew/supertab
+" 13. ervandew/supertab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "ervandew/supertab"
 
