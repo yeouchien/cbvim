@@ -79,7 +79,7 @@ set foldcolumn=1
 syntax enable
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-tomorrow
+colorscheme base16-solarized
 
 set cursorline
 set cursorcolumn
@@ -144,7 +144,6 @@ endtry
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 
 " Map auto complete of (, ", ', [
-inoremap ( ()<esc>i
 inoremap $2 []<esc>i
 inoremap $3 {}<esc>i
 inoremap $4 {<esc>o}<esc>O
@@ -158,7 +157,11 @@ imap Jk <esc>
 
 " To save, space w
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>e :wq<CR>
 
+" Syntastic Checker for React JSX files
+let g:syntastic_javascript_checkers = ['eslint']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. ctrlp.vim
@@ -212,10 +215,10 @@ Bundle 'scrooloose/syntastic'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 8. vim-javascript
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "pangloss/vim-javascript"
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+"Bundle "pangloss/vim-javascript"
+"let g:html_indent_inctags = "html,body,head,tbody"
+"let g:html_indent_script1 = "inc"
+"let g:html_indent_style1 = "inc"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -242,6 +245,17 @@ vmap <C-v> <Plug>(expand_region_shrink)
 Bundle "rking/ag.vim"
 map <Leader>f :Ag<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 13. javascript-libraries-syntax.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "othree/javascript-libraries-syntax.vim"
+let g:used_javascript_libs = 'react,flux,requirejs'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 14. ervandew/supertab
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "ervandew/supertab"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
