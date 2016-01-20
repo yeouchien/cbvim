@@ -264,6 +264,8 @@ Bundle "ervandew/supertab"
 " *. filetype
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.less set filetype=css
+au BufRead,BufNewFile *.go set filetype=go
+au FileType go set nolist textwidth=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. helper functions
