@@ -144,16 +144,6 @@ try
 catch
 endtry
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-
-" Map auto complete of (, ", ', [
-inoremap $2 []<esc>i
-inoremap $3 {}<esc>i
-inoremap $4 {<esc>o}<esc>O
-inoremap $q ''<esc>i
-inoremap $e ""<esc>i
-inoremap $t <><esc>i)
-
 " Map jk to esc
 imap jk <esc>
 imap Jk <esc>
@@ -259,6 +249,11 @@ let g:used_javascript_libs = 'react,flux,requirejs'
 " 13. ervandew/supertab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "ervandew/supertab"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 14. ntpeters/vim-better-whitespace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "ntpeters/vim-better-whitespace"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
