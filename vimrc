@@ -286,3 +286,12 @@ function! VisualSelection(direction, extra_filter) range
   let @/ = l:pattern
   let @" = l:saved_reg
 endfunction
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
