@@ -51,7 +51,7 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 "
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -67,7 +67,7 @@ set lazyredraw
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=5
@@ -137,7 +137,7 @@ set viminfo^=%
 map j gj
 map k gk
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -257,10 +257,16 @@ Bundle "ervandew/supertab"
 Bundle "ntpeters/vim-better-whitespace"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 15. tomlion/vim-solidity
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "tomlion/vim-solidity"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.less set filetype=css
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.sol set filetype=solidity
 au FileType go set nolist textwidth=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
