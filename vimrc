@@ -156,6 +156,14 @@ nnoremap <Leader>e :wq<CR>
 " Syntastic Checker for React JSX files
 let g:syntastic_javascript_checkers = ['eslint']
 
+" It deletes the selected content and drops it in the black hole register
+nnoremap d "xd
+vnoremap d "xd
+nnoremap y "xy
+vnoremap y "xy
+nnoremap p "xp
+vnoremap p "xp
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. ctrlp.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -206,7 +214,6 @@ Bundle 'scrooloose/nerdcommenter'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/syntastic'
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 8. vim-javascript
@@ -231,7 +238,23 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+
 let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_errcheck_bin = "errcheck"
+let g:go_list_type = "quickfix"
+
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+au FileType go nmap <leader>ga :GoAlternate<cr>
+au FileType go nmap <F10> :GoTest -short<cr>
+au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 11. vim-expand-region
@@ -262,11 +285,20 @@ Bundle "ntpeters/vim-better-whitespace"
 Bundle "tomlion/vim-solidity"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 16. nsf/gocode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "nsf/gocode", {'rtp': 'vim/'}
+:inoremap <C-b> <C-x><C-o>
+
+
+Bundle "slim-template/vim-slim"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.less set filetype=css
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.sol set filetype=solidity
+au BufNewFile,BufRead *.slim set filetype=slim
 au FileType go set nolist textwidth=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -301,3 +333,8 @@ function! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
