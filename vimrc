@@ -213,7 +213,14 @@ Bundle 'scrooloose/nerdcommenter'
 " 7. syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/syntastic'
+
+" go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+" elm
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 8. vim-javascript
@@ -287,11 +294,29 @@ Bundle "tomlion/vim-solidity"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 16. nsf/gocode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gocode set autobuild true
+" gocode set propose-builtins true
 Bundle "nsf/gocode", {'rtp': 'vim/'}
 :inoremap <C-b> <C-x><C-o>
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 17. slim-template/vim-slim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "slim-template/vim-slim"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 18. Valloric/YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 19. elmcast/elm-vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "elmcast/elm-vim"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -299,6 +324,7 @@ au BufNewFile,BufRead *.less set filetype=css
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.sol set filetype=solidity
 au BufNewFile,BufRead *.slim set filetype=slim
+au BufNewFile,BufRead *.elm set filetype=elm
 au FileType go set nolist textwidth=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
