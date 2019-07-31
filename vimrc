@@ -105,9 +105,7 @@ set expandtab
 set smarttab
 
 " use system clipboard
-if $TMUX == ''
-  set clipboard+=unnamed
-endif
+set clipboard=unnamedplus,unnamed,autoselect
 
 " 1 tab == 2 spaces
 set shiftwidth=2
@@ -160,12 +158,12 @@ nnoremap <Leader>e :wq<CR>
 "let g:syntastic_javascript_checkers = ['eslint']
 
 " It deletes the selected content and drops it in the black hole register
-nnoremap d "xd
-vnoremap d "xd
-nnoremap y "xy
-vnoremap y "xy
-nnoremap p "xp
-vnoremap p "xp
+"nnoremap d "xd
+"vnoremap d "xd
+"nnoremap y "xy
+"vnoremap y "xy
+"nnoremap p "xp
+"vnoremap p "xp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. ctrlp.vim
@@ -293,14 +291,6 @@ Bundle "ntpeters/vim-better-whitespace"
 " 15. tomlion/vim-solidity
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "tomlion/vim-solidity"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 16. nsf/gocode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gocode set autobuild true
-" gocode set propose-builtins true
-"Bundle "nsf/gocode", {'rtp': 'vim/'}
-":inoremap <C-b> <C-x><C-o>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 17. slim-template/vim-slim
