@@ -76,10 +76,13 @@ set mat=5
 set foldcolumn=1
 
 " Enable syntax highlighting
-syntax enable
+" syntax enable
+syntax on
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-solarized
+"colorscheme base16-solarized
+"colorscheme base16-dracula
+colorscheme base16-gruvbox-dark-hard
 
 set cursorline
 set cursorcolumn
@@ -154,7 +157,7 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>e :wq<CR>
 
 " Syntastic Checker for React JSX files
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_checkers = ['eslint']
 
 " It deletes the selected content and drops it in the black hole register
 nnoremap d "xd
@@ -202,7 +205,10 @@ Bundle 'tpope/vim-surround'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 5. base16-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'chriskempson/base16-vim'
+"Bundle 'chriskempson/base16-vim'
+Bundle 'git@github.com:danielwe/base16-vim.git'
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 6. nerdcommenter
@@ -215,20 +221,14 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 
 " go
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_go_checkers = ['errcheck']
 
 " elm
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 8. vim-javascript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Bundle "pangloss/vim-javascript"
-"let g:html_indent_inctags = "html,body,head,tbody"
-"let g:html_indent_script1 = "inc"
-"let g:html_indent_style1 = "inc"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 9. vim-fugitive
@@ -236,7 +236,6 @@ let g:elm_syntastic_show_warnings = 1
 Bundle "tpope/vim-fugitive"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " 10. vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "fatih/vim-go"
@@ -250,9 +249,14 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
+"let g:go_auto_type_info = 1
 let g:go_errcheck_bin = "errcheck"
 let g:go_list_type = "quickfix"
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_auto_type_info='gopls'
+let g:go_metalinter_command='golangci-lint'
 
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
@@ -269,12 +273,6 @@ au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 Bundle "terryma/vim-expand-region"
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 12. javascript-libraries-syntax.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "othree/javascript-libraries-syntax.vim"
-let g:used_javascript_libs = 'react,flux,requirejs'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 13. ervandew/supertab
@@ -296,8 +294,8 @@ Bundle "tomlion/vim-solidity"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gocode set autobuild true
 " gocode set propose-builtins true
-Bundle "nsf/gocode", {'rtp': 'vim/'}
-:inoremap <C-b> <C-x><C-o>
+"Bundle "nsf/gocode", {'rtp': 'vim/'}
+":inoremap <C-b> <C-x><C-o>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 17. slim-template/vim-slim
@@ -308,14 +306,49 @@ Bundle "slim-template/vim-slim"
 " 18. Valloric/YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "Valloric/YouCompleteMe"
-let g:ycm_semantic_triggers = {
-     \ 'elm' : ['.'],
-     \}
+"let g:ycm_semantic_triggers = {
+     "\ 'elm' : ['.'],
+     "\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 19. elmcast/elm-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle "elmcast/elm-vim"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 20. sheerun/vim-polyglot
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "sheerun/vim-polyglot"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 21. rust-lang/rust.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "rust-lang/rust.vim"
+let g:rustfmt_autosave = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 23. isRuslan/vim-es6
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "isRuslan/vim-es6"
+set cindent
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 24. jparise/vim-graphql
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "jparise/vim-graphql"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 25. w0rp/ale
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "w0rp/ale"
+let g:ale_linters = {
+\  'javascript': ['standard'],
+\}
+
+let g:ale_fixers = { 'javascript': ['standard'] }
+
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " *. filetype
@@ -325,6 +358,10 @@ au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.sol set filetype=solidity
 au BufNewFile,BufRead *.slim set filetype=slim
 au BufNewFile,BufRead *.elm set filetype=elm
+au BufNewFile,BufRead *Jenkins* set filetype=Jenkinsfile
+au BufNewFile,BufRead *jenkins* set filetype=Jenkinsfile
+au BufRead,BufNewFile *.graphql,*.graphqls,*.gql set filetype=graphql
+au BufRead,BufNewFile *.js set filetype=javascript
 au FileType go set nolist textwidth=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
