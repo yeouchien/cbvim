@@ -105,7 +105,8 @@ set expandtab
 set smarttab
 
 " use system clipboard
-set clipboard=unnamedplus,unnamed,autoselect
+"set clipboard=unnamedplus,unnamed,autoselect
+set clipboard=unnamedplus,unnamed
 
 " 1 tab == 2 spaces
 set shiftwidth=2
@@ -220,7 +221,7 @@ Bundle 'scrooloose/syntastic'
 
 " go
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_go_checkers = ['errcheck']
 
 " elm
