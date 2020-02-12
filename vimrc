@@ -208,11 +208,14 @@ Bundle 'tpope/vim-surround'
 Bundle 'git@github.com:danielwe/base16-vim.git'
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=standout ctermfg=11 term=underline cterm=underline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 6. nerdcommenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdcommenter'
+let NERDSpaceDelims=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 7. syntastic
@@ -336,14 +339,14 @@ set cindent
 Bundle "jparise/vim-graphql"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 25. w0rp/ale
+" 25. dense-analysis/ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "w0rp/ale"
+Bundle "dense-analysis/ale"
 let g:ale_linters = {
-\  'javascript': ['standard'],
+\  'javascript': ['eslint'],
 \}
 
-let g:ale_fixers = { 'javascript': ['standard'] }
+let g:ale_fixers = { 'javascript': ['eslint'] }
 
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
