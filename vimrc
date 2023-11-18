@@ -1,10 +1,12 @@
 " required by vundle
 set nocompatible
+filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 0. general
@@ -169,7 +171,7 @@ nnoremap <Leader>e :wq<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. ctrlp.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-f>'
 map <c-b> :CtrlPBuffer<CR>
@@ -179,7 +181,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. nerdtree.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 map <Leader>n :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 au VimEnter *  NERDTree
@@ -187,25 +189,25 @@ au VimEnter *  NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 2. ag.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "rking/ag.vim"
+Plugin 'rking/ag.vim'
 map <Leader>f :Ag<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 3. vim-rails
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 4. vim-surround
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 5. base16-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Bundle 'chriskempson/base16-vim'
-Bundle 'git@github.com:danielwe/base16-vim.git'
+Plugin 'chriskempson/base16-vim'
+" Plugin 'git@github.com:danielwe/base16-vim.git'
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
 highlight clear SpellCap
@@ -214,13 +216,13 @@ highlight SpellCap term=standout ctermfg=11 term=underline cterm=underline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 6. nerdcommenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 let NERDSpaceDelims=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 7. syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " go
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -235,17 +237,17 @@ let g:elm_syntastic_show_warnings = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 8. vim-vim-rhubarb
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-rhubarb'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 9. vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "tpope/vim-fugitive"
+Plugin 'tpope/vim-fugitive'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 10. vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "fatih/vim-go"
+Plugin 'fatih/vim-go'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -277,34 +279,34 @@ au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 11. vim-expand-region
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "terryma/vim-expand-region"
+Plugin 'terryma/vim-expand-region'
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 13. ervandew/supertab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "ervandew/supertab"
+Plugin 'ervandew/supertab'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 14. ntpeters/vim-better-whitespace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "ntpeters/vim-better-whitespace"
+Plugin 'ntpeters/vim-better-whitespace'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 15. tomlion/vim-solidity
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "tomlion/vim-solidity"
+Plugin 'tomlion/vim-solidity'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 17. slim-template/vim-slim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "slim-template/vim-slim"
+Plugin 'slim-template/vim-slim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 18. Valloric/YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "Valloric/YouCompleteMe"
+Plugin 'Valloric/YouCompleteMe'
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_semantic_triggers = {
@@ -314,34 +316,34 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 19. elmcast/elm-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "elmcast/elm-vim"
+Plugin 'elmcast/elm-vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 20. sheerun/vim-polyglot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "sheerun/vim-polyglot"
+Plugin 'sheerun/vim-polyglot'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 21. rust-lang/rust.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "rust-lang/rust.vim"
+Plugin 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 23. isRuslan/vim-es6
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "isRuslan/vim-es6"
+Plugin 'isRuslan/vim-es6'
 set cindent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 24. jparise/vim-graphql
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "jparise/vim-graphql"
+Plugin 'jparise/vim-graphql'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 25. dense-analysis/ale
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "dense-analysis/ale"
+Plugin 'dense-analysis/ale'
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \}
@@ -402,3 +404,6 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+call vundle#end()
+filetype plugin indent on
